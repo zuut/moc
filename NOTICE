@@ -1,0 +1,15 @@
+Moc - The Markedup Object Compiler
+
+Copyright 1993-2021 Zuut
+
+This product includes software developed at Zuut consultancy .
+
+This product was developed solely by myself with the aid of Bison & Flex
+code generators and is being released a few decades later under the
+Apache 2.0 license.
+
+This code is based on pre-standards C++ syntax but has been updated to
+use CMake and compiles under C++17.
+
+
+

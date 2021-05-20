@@ -1,0 +1,249 @@
+#include "../../test_app/test_app.moh"
+
+header_code {
+ Put this at the top of all headers
+};
+header_end_code {
+ Put this at the bottom of all headers
+};
+
+source_code {
+ Put this in all source files
+};
+ 
+struct BuiltInTypes {
+     integer f1;
+     boolean f2;
+     real f3;
+     string f4;
+};
+
+type String { Header "<string>"; };
+
+type int64_t;
+
+header_code {
+  You can specify free form text blocks that end with a brace.
+};
+
+header_code {
+   // last header_code wins
+   // There can be 3 top level code blocks. header_code, header_end_code
+   // and source_code. The last string associated with each is
+   // what is used.
+
+   // Warning MOC uses the C preprocessor (CPP) to preprocess the include
+   // files and macros. However this has its own issues such as
+   // the CPP handling of single quotes. You'll get warnings from
+   // the CPP about missing terminated quotes. Those you can generally
+   // ignore if your output matches your expectations.  Instead,
+   // you can use the sequence \x27 for a single quote and \x22 for
+   // double quotes inside a code block
+   // like so:
+
+  static char header_code= "\
+   here is an escaped double quote char \\\x22 and here is an unescapted \
+   single quote \x27. Typically header code is inserted at the beginning \
+   of a header file.  Comments are removed.";
+};
+
+header_end_code {
+  any string
+};
+
+source_code {
+  any string
+};
+
+// You can define opaque types - for use
+// as property types, method argument types
+// and method return types
+type SomeType;
+
+// You can create aliases to existing types e.g.
+typedef SomeType MyAliasedType;
+
+// You can define enums
+enum AllowedColors { Red = 0, White, Blue };
+
+// You can define constants
+// using integer expression that is a combo of integers
+// with the operations +, -, *, /, |, &, ||, %, <<, >> and grouped
+// using parentheses
+constant VAL = 1 * (3 % 4);
+
+// Structs can only have properties
+struct AStruct {
+    integer id;
+};
+struct AStructWithoutAnyPropertiesOrMethods {};
+
+// Classes and interfaces may have properties and methods
+class AClass {
+    integer id;
+};
+class AClassWithoutAnyPropertiesOrMethods {};
+
+interface AnInterface {
+    integer id;
+};
+interface AnInterfaceWithoutAnyPropertiesOrMethods {};
+
+typedef AnInterface AnInterfaceTypedef;
+
+struct AStructWithClassProperties {
+  // NOT ALLOWED: AClass field1;
+  // NOT ALLOWED: AnInterface field2;
+  AnInterfaceTypedef field3; // ALLOWED
+};
+  
+class AClassWithClassProps {
+  // NOT ALLOWED: AClass field1;
+  // NOT ALLOWED: AnInterface field2;
+  AnInterfaceTypedef field3;
+};
+  
+// A struct with properties
+// The types for the properties can be builtin, a declared Type
+// or another struct. They can't be classes or interfaces.
+struct AStructWithProperties {
+    integer field1;
+    String field2;
+    SomeType field3;
+    AStruct field5;
+    // NOT ALLOWED: AClass field4;
+};
+
+// Structs can not inherit:
+// NOT ALLOWED: struct AStruct2 : AStruct {};
+// NOT ALLOWED: struct AStruct2 : AClass {};
+
+// Classes and interfaces can do multiple inheritance
+class DerivedPrivate : AClass {};
+class DerivedPublic : public AClass {};
+class DerivedMultiple : AClass , public AClassWithoutAnyPropertiesOrMethods {};
+// NOT ALLOWED class Derived : AStruct {};
+interface AnotherInterface : public AnInterface, AClass {};
+
+
+//
+// Classes and interfaces can have methods in additon to properties
+class AClassWithAMethod {
+   method SomeType aMethod1();
+   method AStruct aMethod2(integer arg1, String arg2);
+   method AClass aMethod3();
+   method AClass aMethod4(AnInterface arg1);
+   method AClass aMethod5(AnInterface arg1) throws SomeType;
+   method AClass aMethod6(AnInterface arg1) throws AClass;
+   method AClass aMethod7(AnInterface arg1) throws AClass, AStruct;
+};
+
+
+// Most items may have annotations attached to them to be queried
+// by the templates. This allows the templates to optionally generate
+// code if an annotation is present or not.
+//
+// There are a few ways of adding a key-value annotation:
+//
+// [[ annotation-name {annotation-value}]] or
+//
+// key annotation-name value annotation-value  or
+//
+// key annotation-name value code { free form text until closing } 
+//
+// User defined annotations should start with either lower-case letter
+// or with a leading underscore.
+// annotations or key-value-pairs may be attached to
+//   types,
+//   structs,
+//        properties of structs,
+//   classes or interfaces,
+//        properties of classes or interfaces,
+//        methods of classes or interfaces,
+//           arguments of methods
+//           exceptions of methods
+class AnnotationOnClass {
+      [[ annotationOnClass {this class has an annotation}]];
+      [[ annotation2OnClass {this class has another annotation}]];
+};
+
+class AnnotationOnClassProperty {
+      integer id, 
+            [[ annotationOnFieldId {the field 'id' has an annotation}]],
+            [[ annotation2OnFieldId {and another annotation}]];
+};
+
+class AnnotationOnClassProperty {
+      integer id, 
+            [[ annotationOnFieldId {the field 'id' has an annotation}]],
+            [[ annotation2OnFieldId {and another annotation}]];
+};
+
+class AnnotationOnClassMethod {
+      method SomeType aMethod1()
+         [[ annotationOnAMethod1 { what to do } ]];
+
+      method SomeType aMethod2(integer arg1)
+         [[ annotationOnAMethod1 { what to do } ]],
+         [[ annotationOnAMethod2 { what to do } ]];
+
+      method SomeType aMethod3(integer arg1 )
+         [[ annotationOnAMethod1 { what to do } ]],
+         [[ annotationOnAMethod2 { what to do } ]]
+         throws AClass;
+};
+
+class AnnotationOnClassMethodArgument {
+      // NOTE: there are no commas between the annotations
+      // and the arguments. Commas separate the arguments.
+      // spaces separate annotations on 1 argument
+      method SomeType aMethod1(
+              integer arg1
+                [[ annotation1OnArg1 { v2 }]]
+                [[ annotation2OnArg1 { v3 }]])
+         [[ annotationOnAMethod1 { what to do } ]];
+
+      method SomeType
+         aMethod2(integer arg1
+                    [[ annotation1OnArg1 { v2 }]]
+                    [[ annotation2OnArg1 { v3 }]]  , // comma sep args
+                  SomeType arg2
+                    [[ annotation1OnArg2 { v2 }]]
+                    [[ annotation2OnArg2 { v3 }]] )
+         [[ annotationOnAMethod2 { what to do } ]];
+};
+
+type EnumWithAnnotations {
+  [[ annotation1OnEnum {va2} ]];
+  [[ annotation2OnEnum {va2} ]];
+  enum @ {
+     One, OrNone
+  };
+};
+
+type AliasOfAnotherStruct {
+    [[ annotationOnAliasType { v1 } ]];
+    typedef AnotherStruct @;
+};
+
+struct AnotherStruct {
+   EnumWithAnnotations enum1;
+   AllowedColors colorEnum;
+};
+
+struct AStructWithAnnotatedProperty {
+   EnumWithAnnotations enum1,
+       [[ annotation1OnEnum1 { v3 } ]],
+       [[ annotation2OnEnum1 { v4 } ]];
+};
+
+type AnotherEnum {
+    enum @ { Red, White, Blue };
+};
+
+type ASt {
+    struct @ {
+        integer f1;
+        string f2;
+    };
+};
