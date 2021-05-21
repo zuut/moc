@@ -5,6 +5,7 @@
 #ifndef __MCINTERNAL__
 #define __MCINTERNAL__
 
+#define register
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
