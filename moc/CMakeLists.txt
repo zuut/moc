@@ -69,11 +69,12 @@ bld_add_custom_bison_target(CONTROL.y
 
 
 add_executable(${CMAKE_BUILD_TARGET_NAME}
-        Input.C
+        Input.cpp
         Input.h
-        main.C
-        Output.C
+        main.cpp
+        Output.cpp
         Output.h
+        Version.cpp
         ${MOC_FLEX_FILES}
         ${MOC_BISON_FILES}
         ${IF_FLEX_FILES}

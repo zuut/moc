@@ -4,6 +4,8 @@
 #include "Input.h"
 #include "MOC.h"
 #include "MOCInternal.h"
+#include "Version.h"
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
@@ -54,9 +56,13 @@ static const char *gHelp =
     "               the generated sequences \n"
     "       -V <variable>=<value>: specifies a global variable \n"
     "       -d <directory separator>: a single character used to\n"
-    "               separate directories\n";
+    "               separate directories\n"
+    "\n"
+    "version: %s\n";
 
-void Usage() { fprintf(stderr, gHelp, gProgram); }
+void Usage() {
+    fprintf(stderr, gHelp, gProgram, VERSION_STRING);
+}
 
 int main(int argc, char **argv) {
     ufTmpBufInit();

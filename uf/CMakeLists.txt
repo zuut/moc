@@ -6,35 +6,35 @@ endif()
 set(SOURCE_FILES
         generic.h
         ufAll.h
-        ufAssert.C
-        ufDate.C
+        ufAssert.cpp
+        ufDate.cpp
         ufDate.h
-        ufDef.C
+        ufDef.cpp
         ufDef.h
-        ufFileNm.C
+        ufFileNm.cpp
         ufFileNm.h
-        ufIHshT.C
+        ufIHshT.cpp
         ufIHshT.h
-        ufList.C
+        ufList.cpp
         ufList.h
-        ufPtr.C
+        ufPtr.cpp
         ufPtr.h
-        ufSHshT.C
+        ufSHshT.cpp
         ufSHshT.h
-        ufString.C
+        ufString.cpp
         ufString.h
-        ufUtil.C)
+        ufUtil.cpp)
 
 add_library(uf ${SOURCE_FILES})
 
-add_executable(ufPtrTest ufPtr.C)
+add_executable(ufPtrTest ufPtr.cpp)
 target_compile_definitions(ufPtrTest PUBLIC ufPtrTEST DEBUG TEST)
 
-add_executable(ufListTest ufList.C  ufPtr.C)
+add_executable(ufListTest ufList.cpp  ufPtr.cpp)
 target_compile_definitions(ufListTest PUBLIC ufListTEST DEBUG TEST)
 
-add_executable(ufSHshTTest ufSHshT.C ufPtr.C ufString.C)
+add_executable(ufSHshTTest ufSHshT.cpp ufPtr.cpp ufString.cpp)
 target_compile_definitions(ufSHshTTest PUBLIC ufSHshTTEST DEBUG TEST)
 
-add_executable(ufIHshTTest ufIHshT.C ufPtr.C)
+add_executable(ufIHshTTest ufIHshT.cpp ufPtr.cpp)
 target_compile_definitions(ufIHshTTest PUBLIC ufIHshTTEST DEBUG TEST)
