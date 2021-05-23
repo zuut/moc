@@ -3,6 +3,11 @@ find_program (FLEX_TOOL NAMES flex REQUIRED)
 find_program (BISON_TOOL NAMES bison REQUIRED)
 find_program (SED_TOOL NAMES sed REQUIRED)
 
+function(bld_verbose_message message)
+  if (Verbose)
+    message(${message})
+  endif()
+endfunction()
 
 #bld_add_custom_bison_target(INPUT.y
 #  SET_VAR MY_BISON_FILES -required
@@ -27,6 +32,9 @@ function(bld_add_custom_bison_target InputFile)
   set(GenSrcName "${GENERATED_SOURCE}/${Basename}.l.cpp")
   set(GenHeaderName "${GENERATED_SOURCE}/${Basename}Tokens.h")
   set(${P_SET_VAR} "${GenSrcName};${GenHeaderName}" PARENT_SCOPE)
+  bld_verbose_message("COMMAND: ${BISON_TOOL} --defines=${TempHeaderName} -o ${TempName} ${CMAKE_CURRENT_SOURCE_DIR}/${InputFile}")
+  bld_verbose_message("COMMAND: ${SED_TOOL} -e 's/yyerror/${P_YY_ERROR}/g' -e 's/yylex/${P_YY_LEX}/g' -e 's/yy/${P_YY_PREFIX}/g' < '${TempHeaderName}' > ${GenHeaderName}")
+  bld_verbose_message("COMMAND: ${SED_TOOL} -e 's/yyerror/${P_YY_ERROR}/g' -e 's/yylex/${P_YY_LEX}/g' -e 's/yy/${P_YY_PREFIX}/g' < '${TempName}' > ${GenSrcName}")
   add_custom_command(
     COMMENT ""
     OUTPUT "${TempName}" "${GenSrcName}" "${TempHeaderName}" "${GenHeaderName}"
@@ -57,6 +65,8 @@ function(bld_add_custom_flex_target InputFile)
   set(TempName "${GENERATED_SOURCE}/${Basename}.temp")
   set(GenSrcName "${GENERATED_SOURCE}/${Basename}.l.cpp")
   set(${P_SET_VAR} "${GenSrcName}" PARENT_SCOPE)
+  bld_verbose_message("COMMAND: ${FLEX_TOOL} -L -o ${TempName} ${CMAKE_CURRENT_SOURCE_DIR}/${InputFile}")
+  bld_verbose_message("COMMAND: ${SED_TOOL} -e 's/yyerror/${P_YY_ERROR}/g' -e 's/yylex/${P_YY_LEX}/g' -e 's/yy/${P_YY_PREFIX}/g' < '${TempName}' > ${GenSrcName}")
   add_custom_command(
     COMMENT ""
     OUTPUT "${TempName}" "${GenSrcName}"

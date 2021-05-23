@@ -5,7 +5,6 @@ genSrc
 Gen
 *.log
 cmake-build-*
-foo
 
 
 

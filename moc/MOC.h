@@ -16,4 +16,8 @@ const int kBadTypeCodeGeneration = 14;
 const int kBadOutputGeneration = 15;
 const int kBadSequenceLogSaving = 16;
 
+// Negative error codes will terminate processing immediate
+// and exit with exit code 0
+const int kExitImmediatelyWithOk=-1;
+
 #endif

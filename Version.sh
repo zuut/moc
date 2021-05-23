@@ -1,0 +1,11 @@
+
+version_file=moc/moc/Version.cpp
+MAJOR_VERSION=0
+MINOR_VERSION=9
+PATCH_VERSION=2
+VERSION_LABEL="pre release"
+VERSION_STRING="${MAJOR_VERSION}.${MINOR_VERSION}.${PATCH_VERSION}-${VERSION_LABEL}"
+VERSION_DESCRIPTION="Testing publishing and version setup"
+
+
+

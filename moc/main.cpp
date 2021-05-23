@@ -50,6 +50,7 @@ static int ReadInput(int argc, char **argv, char *cmd);
 
 static const char *gHelp =
     " %s [<options>] <filename>\n"
+    "       -v version\n"
     "       -T <template>: specifies the MO compiler template\n"
     "       -I <includedir>: specifies the include path \n"
     "       -S <sequence log file>: specifies the log file for \n"
@@ -62,6 +63,10 @@ static const char *gHelp =
 
 void Usage() {
     fprintf(stderr, gHelp, gProgram, VERSION_STRING);
+}
+
+void Version() {
+    printf("%s %s\n", gProgram, VERSION_STRING);
 }
 
 int main(int argc, char **argv) {
@@ -94,7 +99,7 @@ int Execute(int argc, char **argv) {
     int res = GetOpts(argc, argv, cmd);
 
     if (res) {
-        return res;
+        return res > 0 ? res : 0;
     }
 
     LoadTemplate();
@@ -220,6 +225,12 @@ static int GetOpts(int argc, char **argv, char *cmd) {
             int done = 0;
             for (ap = ++*argv; done == 0 && *ap != '\0'; ap++) {
                 switch (*ap) {
+                case 'h':
+                    Usage();
+                    return kExitImmediatelyWithOk;
+                case 'v':
+                    Version();
+                    return kExitImmediatelyWithOk;
                 case 'I':
                     optVal = 0;
                     if (ap[1] != 0) {

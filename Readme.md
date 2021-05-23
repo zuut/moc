@@ -1,8 +1,8 @@
-# The Markedup Object Compiler
+# Model Object Compiler
 
 This project contains:
 
-    - moc - the source code for the markedup object compiler
+    - moc - the source code for the model object compiler
     - uf - a pre standard library C++ utility library used by moc
     - doc - documentation see [Intro](doc/Intro.md).
     - test_app - A sample test application illustrating using the moc cmake function to generate source files for the project. This project does nothing other than the generator being run.
