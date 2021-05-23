@@ -10,6 +10,7 @@ fatal() {
     exit 1
 }
 
+type -p conan || fatal Unable to find conan. Please install it and add it to your path.
 MOC_VERSION=$(grep "version = " conanfile.py | awk 'NR==1{print $3}' | awk -F\" '{print $2 }')
 [ ! -z "$MOC_VERSION" ] || fatal USAGE $0 {version}. e.g. $0 0.9.1
 
