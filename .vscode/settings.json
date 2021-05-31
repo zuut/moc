@@ -1,0 +1,13 @@
+{
+    "cmake.configureSettings": {
+        "CMAKE_EXPORT_COMPILE_COMMANDS": true // IMPORTANT FOR INTELLISENSE
+    },
+    "cmake.configureOnOpen": true,
+    "cmake.debugConfig": {
+        "cwd": "${command:cmake.launchTargetDirectory}"
+    },
+    "files.associations": {
+        "**.C": "cpp"
+    },
+    "C_Cpp.errorSquiggles": "Enabled"
+}

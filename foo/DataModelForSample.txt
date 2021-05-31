@@ -1,0 +1,854 @@
+MODULE: sample
+
+#line 1 "../templates/test1.moc" 
+
+#line 6 "foo/DataModelForSample.txt" 
+
+#line 2 "../templates/test1.moc" 
+
+#line 10 "foo/DataModelForSample.txt" 
+
+#line 3 "../templates/test1.moc" 
+
+#line 14 "foo/DataModelForSample.txt" 
+
+////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////
+//
+//
+//             CLASSES AND INTERFACES
+//
+//
+////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////
+----------------------------------------------------------
+----------------------------------------------------------
+@ a line beginning with a single '@' character.
+  Name: AClass
+  TypeString: AClass
+  TypeCode : 1012
+  Filename: examples/sample/sample.moc
+  Lineno: 69
+  Type: 1012
+  IsType: 0
+  IsClass : 1
+  IsEnum : 0
+  IsAggregate : 1
+  IsTypeDef : 0
+  IsArg : 0
+  IsMethod : 0
+    This class does not derive from any other class or interface.
+
+  Properties of AClass
+    Name: id
+    code :  
+    Type.TypeString: int
+    TypeCode : 1013
+    Filename: examples/sample/sample.moc
+    Lineno: 70
+    IsType: 0
+    IsClass : 0
+    IsEnum : 0
+    IsAggregate : 0
+    IsTypeDef : 0
+    ArrayLength: 
+    IsArg : 0
+    IsMethod : 0
+
+    Type.Name: INTEGER
+    Type.TypeString: int
+    TypeTypeCode: kIntegerTypeCode
+    Type.Filename: -builtin-
+    Type.Header: Gen/sample.h
+    Type.Lineno: 0
+    Type.IsType: 1
+    Type.IsClass : 0
+    Type.IsEnum: 0
+    Type.IsAggregate: 0
+    Type.IsTypeDef: 0
+    Type.IsArg : 0
+    Type.IsMethod : 0
+
+  @(:length annotations)  = 0 
+  @(:nth 0 annotations Name)  = 
+  @(:nth 0 annotations Value)  = 
+  @(:nth 1 annotations Name)  = 
+  @(:nth 1 annotations Value)  = 
+  No methods.
+
+
+----------------------------------------------------------
+----------------------------------------------------------
+@ a line beginning with a single '@' character.
+  Name: AClassWithoutAnyPropertiesOrMethods
+  TypeString: AClassWithoutAnyPropertiesOrMethods
+  TypeCode : 1014
+  Filename: examples/sample/sample.moc
+  Lineno: 72
+  Type: 1014
+  IsType: 0
+  IsClass : 1
+  IsEnum : 0
+  IsAggregate : 1
+  IsTypeDef : 0
+  IsArg : 0
+  IsMethod : 0
+    This class does not derive from any other class or interface.
+
+  No Properties for AClassWithoutAnyPropertiesOrMethods
+  No methods.
+
+
+----------------------------------------------------------
+----------------------------------------------------------
+@ a line beginning with a single '@' character.
+  Name: AnInterface
+  TypeString: AnInterface
+  TypeCode : 1015
+  Filename: examples/sample/sample.moc
+  Lineno: 74
+  Type: 1015
+  IsType: 0
+  IsClass : 1
+  IsEnum : 0
+  IsAggregate : 1
+  IsTypeDef : 0
+  IsArg : 0
+  IsMethod : 0
+    This class does not derive from any other class or interface.
+
+  Properties of AnInterface
+    Name: id
+    code :  
+    Type.TypeString: int
+    TypeCode : 1016
+    Filename: examples/sample/sample.moc
+    Lineno: 75
+    IsType: 0
+    IsClass : 0
+    IsEnum : 0
+    IsAggregate : 0
+    IsTypeDef : 0
+    ArrayLength: 
+    IsArg : 0
+    IsMethod : 0
+
+    Type.Name: INTEGER
+    Type.TypeString: int
+    TypeTypeCode: kIntegerTypeCode
+    Type.Filename: -builtin-
+    Type.Header: Gen/sample.h
+    Type.Lineno: 0
+    Type.IsType: 1
+    Type.IsClass : 0
+    Type.IsEnum: 0
+    Type.IsAggregate: 0
+    Type.IsTypeDef: 0
+    Type.IsArg : 0
+    Type.IsMethod : 0
+
+  @(:length annotations)  = 0 
+  @(:nth 0 annotations Name)  = 
+  @(:nth 0 annotations Value)  = 
+  @(:nth 1 annotations Name)  = 
+  @(:nth 1 annotations Value)  = 
+  No methods.
+
+
+----------------------------------------------------------
+----------------------------------------------------------
+@ a line beginning with a single '@' character.
+  Name: AnInterfaceWithoutAnyPropertiesOrMethods
+  TypeString: AnInterfaceWithoutAnyPropertiesOrMethods
+  TypeCode : 1017
+  Filename: examples/sample/sample.moc
+  Lineno: 77
+  Type: 1017
+  IsType: 0
+  IsClass : 1
+  IsEnum : 0
+  IsAggregate : 1
+  IsTypeDef : 0
+  IsArg : 0
+  IsMethod : 0
+    This class does not derive from any other class or interface.
+
+  No Properties for AnInterfaceWithoutAnyPropertiesOrMethods
+  No methods.
+
+
+----------------------------------------------------------
+----------------------------------------------------------
+@ a line beginning with a single '@' character.
+  Name: AClassWithClassProps
+  TypeString: AClassWithClassProps
+  TypeCode : 1018
+  Filename: examples/sample/sample.moc
+  Lineno: 87
+  Type: 1018
+  IsType: 0
+  IsClass : 1
+  IsEnum : 0
+  IsAggregate : 1
+  IsTypeDef : 0
+  IsArg : 0
+  IsMethod : 0
+    This class does not derive from any other class or interface.
+
+  Properties of AClassWithClassProps
+    Name: field3
+    code :  
+    Type.TypeString: AnInterfaceTypedef
+    TypeCode : 1019
+    Filename: examples/sample/sample.moc
+    Lineno: 90
+    IsType: 0
+    IsClass : 0
+    IsEnum : 0
+    IsAggregate : 0
+    IsTypeDef : 0
+    ArrayLength: 
+    IsArg : 0
+    IsMethod : 0
+
+    Type.Name: AnInterfaceTypedef
+    Type.TypeString: AnInterfaceTypedef
+    TypeTypeCode: 1020
+    Type.Filename: examples/sample/sample.moc
+    Type.Header: Gen/sample.h
+    Type.Lineno: 79
+    Type.IsType: 1
+    Type.IsClass : 0
+    Type.IsEnum: 0
+    Type.IsAggregate: 0
+    Type.IsTypeDef: 1
+    Type.IsArg : 0
+    Type.IsMethod : 0
+
+  @(:length annotations)  = 0 
+  @(:nth 0 annotations Name)  = 
+  @(:nth 0 annotations Value)  = 
+  @(:nth 1 annotations Name)  = 
+  @(:nth 1 annotations Value)  = 
+  No methods.
+
+
+----------------------------------------------------------
+----------------------------------------------------------
+@ a line beginning with a single '@' character.
+  Name: DerivedPrivate
+  TypeString: DerivedPrivate
+  TypeCode : 1021
+  Filename: examples/sample/sample.moc
+  Lineno: 109
+  Type: 1021
+  IsType: 0
+  IsClass : 1
+  IsEnum : 0
+  IsAggregate : 1
+  IsTypeDef : 0
+  IsArg : 0
+  IsMethod : 0
+    This class does not derive from any other class or interface.
+
+  No Properties for DerivedPrivate
+  No methods.
+
+
+----------------------------------------------------------
+----------------------------------------------------------
+@ a line beginning with a single '@' character.
+  Name: DerivedPublic
+  TypeString: DerivedPublic
+  TypeCode : 1022
+  Filename: examples/sample/sample.moc
+  Lineno: 110
+  Type: 1022
+  IsType: 0
+  IsClass : 1
+  IsEnum : 0
+  IsAggregate : 1
+  IsTypeDef : 0
+  IsArg : 0
+  IsMethod : 0
+    This class does not derive from any other class or interface.
+
+  No Properties for DerivedPublic
+  No methods.
+
+
+----------------------------------------------------------
+----------------------------------------------------------
+@ a line beginning with a single '@' character.
+  Name: DerivedMultiple
+  TypeString: DerivedMultiple
+  TypeCode : 1023
+  Filename: examples/sample/sample.moc
+  Lineno: 111
+  Type: 1023
+  IsType: 0
+  IsClass : 1
+  IsEnum : 0
+  IsAggregate : 1
+  IsTypeDef : 0
+  IsArg : 0
+  IsMethod : 0
+    This class does not derive from any other class or interface.
+
+  No Properties for DerivedMultiple
+  No methods.
+
+
+----------------------------------------------------------
+----------------------------------------------------------
+@ a line beginning with a single '@' character.
+  Name: AnotherInterface
+  TypeString: AnotherInterface
+  TypeCode : 1024
+  Filename: examples/sample/sample.moc
+  Lineno: 113
+  Type: 1024
+  IsType: 0
+  IsClass : 1
+  IsEnum : 0
+  IsAggregate : 1
+  IsTypeDef : 0
+  IsArg : 0
+  IsMethod : 0
+    This class does not derive from any other class or interface.
+
+  No Properties for AnotherInterface
+  No methods.
+
+
+----------------------------------------------------------
+----------------------------------------------------------
+@ a line beginning with a single '@' character.
+  Name: AClassWithAMethod
+  TypeString: AClassWithAMethod
+  TypeCode : 1025
+  Filename: examples/sample/sample.moc
+  Lineno: 118
+  Type: 1025
+  IsType: 0
+  IsClass : 1
+  IsEnum : 0
+  IsAggregate : 1
+  IsTypeDef : 0
+  IsArg : 0
+  IsMethod : 0
+    This class does not derive from any other class or interface.
+
+  No Properties for AClassWithAMethod
+  Methods:
+    .....
+    Belongs to: AClassWithAMethod
+    Name: aMethod1
+      Annotation: Name: ReturnType , Value: SomeType
+    ReturnType: SomeType
+    ReturnType.Type.IsClass: 0
+    ReturnType.Type.IsType: 1
+    ReturnType.Type.IsEnum: 0
+    ReturnType.Type.IsAggregate: 0
+    ReturnType.Type.IsTypeDef: 0
+    ReturnType.Type.Filename: examples/sample/sample.moc
+    ReturnType.Type.Lineno: 48
+    TypeCode: 1026
+    Filename: examples/sample/sample.moc
+    Lineno: 119
+    IsType: 0
+    IsClass : 0
+    IsEnum : 0
+    IsAggregate : 0
+    IsTypeDef : 0
+    IsArg : 0
+    IsMethod : 1
+    All Args Boo: ' 'done.
+
+    In Arguments to Method:
+    Error Arguments to Method:
+    .....
+    Belongs to: AClassWithAMethod
+    Name: aMethod2
+      Annotation: Name: ReturnType , Value: AStruct
+    ReturnType: AStruct
+    ReturnType.Type.IsClass: 0
+    ReturnType.Type.IsType: 1
+    ReturnType.Type.IsEnum: 0
+    ReturnType.Type.IsAggregate: 1
+    ReturnType.Type.IsTypeDef: 0
+    ReturnType.Type.Filename: examples/sample/sample.moc
+    ReturnType.Type.Lineno: 63
+    TypeCode: 1027
+    Filename: examples/sample/sample.moc
+    Lineno: 120
+    IsType: 0
+    IsClass : 0
+    IsEnum : 0
+    IsAggregate : 0
+    IsTypeDef : 0
+    IsArg : 0
+    IsMethod : 1
+    All Args Boo: 'in int thearg1,
+                   in String thearg2 'done.
+
+    In Arguments to Method:
+      Name: arg1
+      TypeString: N/A
+      Type.TypeString: int
+      Method:  aMethod2 
+      TypeCode : 0
+      Filename: examples/sample/sample.moc
+      Lineno: 120
+      IsType: 0
+      IsClass : 0
+      IsEnum : 0
+      IsAggregate : 0
+      IsTypeDef : 0
+      IsArg : 1
+      IsMethod : 0
+      Type.Name: INTEGER
+      Type.TypeString: int
+      Type.Filename: -builtin-
+      Type.Header: 
+      Type.Lineno: 0
+      Type.IsType: 1
+      Type.IsClass : 0
+      Type.IsEnum: 0
+      Type.IsAggregate: 0
+      Type.IsTypeDef: 0
+      Type.IsArg : 0
+      Type.IsMethod : 0
+
+      Name: arg2
+      TypeString: N/A
+      Type.TypeString: String
+      Method:  aMethod2 
+      TypeCode : 0
+      Filename: examples/sample/sample.moc
+      Lineno: 120
+      IsType: 0
+      IsClass : 0
+      IsEnum : 0
+      IsAggregate : 0
+      IsTypeDef : 0
+      IsArg : 1
+      IsMethod : 0
+      Type.Name: String
+      Type.TypeString: String
+      Type.Filename: examples/sample/../../test_app/test_app.moh
+      Type.Header: 
+      Type.Lineno: 2
+      Type.IsType: 1
+      Type.IsClass : 0
+      Type.IsEnum: 0
+      Type.IsAggregate: 0
+      Type.IsTypeDef: 0
+      Type.IsArg : 0
+      Type.IsMethod : 0
+
+    Error Arguments to Method:
+    .....
+    Belongs to: AClassWithAMethod
+    Name: aMethod3
+      Annotation: Name: ReturnType , Value: AClass
+    ReturnType: AClass
+    ReturnType.Type.IsClass: 1
+    ReturnType.Type.IsType: 0
+    ReturnType.Type.IsEnum: 0
+    ReturnType.Type.IsAggregate: 1
+    ReturnType.Type.IsTypeDef: 0
+    ReturnType.Type.Filename: examples/sample/sample.moc
+    ReturnType.Type.Lineno: 69
+    TypeCode: 1028
+    Filename: examples/sample/sample.moc
+    Lineno: 121
+    IsType: 0
+    IsClass : 0
+    IsEnum : 0
+    IsAggregate : 0
+    IsTypeDef : 0
+    IsArg : 0
+    IsMethod : 1
+    All Args Boo: ' 'done.
+
+    In Arguments to Method:
+    Error Arguments to Method:
+    .....
+    Belongs to: AClassWithAMethod
+    Name: aMethod4
+      Annotation: Name: ReturnType , Value: AClass
+    ReturnType: AClass
+    ReturnType.Type.IsClass: 1
+    ReturnType.Type.IsType: 0
+    ReturnType.Type.IsEnum: 0
+    ReturnType.Type.IsAggregate: 1
+    ReturnType.Type.IsTypeDef: 0
+    ReturnType.Type.Filename: examples/sample/sample.moc
+    ReturnType.Type.Lineno: 69
+    TypeCode: 1029
+    Filename: examples/sample/sample.moc
+    Lineno: 122
+    IsType: 0
+    IsClass : 0
+    IsEnum : 0
+    IsAggregate : 0
+    IsTypeDef : 0
+    IsArg : 0
+    IsMethod : 1
+    All Args Boo: 'in AnInterface thearg1 'done.
+
+    In Arguments to Method:
+      Name: arg1
+      TypeString: N/A
+      Type.TypeString: AnInterface
+      Method:  aMethod4 
+      TypeCode : 0
+      Filename: examples/sample/sample.moc
+      Lineno: 122
+      IsType: 0
+      IsClass : 0
+      IsEnum : 0
+      IsAggregate : 0
+      IsTypeDef : 0
+      IsArg : 1
+      IsMethod : 0
+      Type.Name: AnInterface
+      Type.TypeString: AnInterface
+      Type.Filename: examples/sample/sample.moc
+      Type.Header: 
+      Type.Lineno: 74
+      Type.IsType: 0
+      Type.IsClass : 1
+      Type.IsEnum: 0
+      Type.IsAggregate: 1
+      Type.IsTypeDef: 0
+      Type.IsArg : 0
+      Type.IsMethod : 0
+
+    Error Arguments to Method:
+    .....
+    Belongs to: AClassWithAMethod
+    Name: aMethod5
+      Annotation: Name: ReturnType , Value: AClass
+    ReturnType: AClass
+    ReturnType.Type.IsClass: 1
+    ReturnType.Type.IsType: 0
+    ReturnType.Type.IsEnum: 0
+    ReturnType.Type.IsAggregate: 1
+    ReturnType.Type.IsTypeDef: 0
+    ReturnType.Type.Filename: examples/sample/sample.moc
+    ReturnType.Type.Lineno: 69
+    TypeCode: 1030
+    Filename: examples/sample/sample.moc
+    Lineno: 123
+    IsType: 0
+    IsClass : 0
+    IsEnum : 0
+    IsAggregate : 0
+    IsTypeDef : 0
+    IsArg : 0
+    IsMethod : 1
+    All Args Boo: 'in AnInterface thearg1,
+                   err SomeType theSomeType 'done.
+
+    In Arguments to Method:
+      Name: arg1
+      TypeString: N/A
+      Type.TypeString: AnInterface
+      Method:  aMethod5 
+      TypeCode : 0
+      Filename: examples/sample/sample.moc
+      Lineno: 123
+      IsType: 0
+      IsClass : 0
+      IsEnum : 0
+      IsAggregate : 0
+      IsTypeDef : 0
+      IsArg : 1
+      IsMethod : 0
+      Type.Name: AnInterface
+      Type.TypeString: AnInterface
+      Type.Filename: examples/sample/sample.moc
+      Type.Header: 
+      Type.Lineno: 74
+      Type.IsType: 0
+      Type.IsClass : 1
+      Type.IsEnum: 0
+      Type.IsAggregate: 1
+      Type.IsTypeDef: 0
+      Type.IsArg : 0
+      Type.IsMethod : 0
+
+    Error Arguments to Method:
+      Name: SomeType
+      TypeString: N/A
+      Type.TypeString: SomeType
+      Method:  aMethod5 
+      TypeCode : 0
+      Filename: examples/sample/sample.moc
+      Lineno: 123
+      IsType: 0
+      IsClass : 0
+      IsEnum : 0
+      IsAggregate : 0
+      IsTypeDef : 0
+
+      Type.TypeString: SomeType
+      TypeTypeCode: 
+      Type.Filename: examples/sample/sample.moc
+      Type.Header: 
+      Type.Lineno: 48
+      Type.IsType: 1
+      Type.IsClass : 0
+      Type.IsEnum: 0
+      Type.IsAggregate: 0
+      Type.IsTypeDef: 0
+
+    .....
+    Belongs to: AClassWithAMethod
+    Name: aMethod6
+      Annotation: Name: ReturnType , Value: AClass
+    ReturnType: AClass
+    ReturnType.Type.IsClass: 1
+    ReturnType.Type.IsType: 0
+    ReturnType.Type.IsEnum: 0
+    ReturnType.Type.IsAggregate: 1
+    ReturnType.Type.IsTypeDef: 0
+    ReturnType.Type.Filename: examples/sample/sample.moc
+    ReturnType.Type.Lineno: 69
+    TypeCode: 1031
+    Filename: examples/sample/sample.moc
+    Lineno: 124
+    IsType: 0
+    IsClass : 0
+    IsEnum : 0
+    IsAggregate : 0
+    IsTypeDef : 0
+    IsArg : 0
+    IsMethod : 1
+    All Args Boo: 'in AnInterface thearg1,
+                   err AClass theAClass 'done.
+
+    In Arguments to Method:
+      Name: arg1
+      TypeString: N/A
+      Type.TypeString: AnInterface
+      Method:  aMethod6 
+      TypeCode : 0
+      Filename: examples/sample/sample.moc
+      Lineno: 124
+      IsType: 0
+      IsClass : 0
+      IsEnum : 0
+      IsAggregate : 0
+      IsTypeDef : 0
+      IsArg : 1
+      IsMethod : 0
+      Type.Name: AnInterface
+      Type.TypeString: AnInterface
+      Type.Filename: examples/sample/sample.moc
+      Type.Header: 
+      Type.Lineno: 74
+      Type.IsType: 0
+      Type.IsClass : 1
+      Type.IsEnum: 0
+      Type.IsAggregate: 1
+      Type.IsTypeDef: 0
+      Type.IsArg : 0
+      Type.IsMethod : 0
+
+    Error Arguments to Method:
+      Name: AClass
+      TypeString: N/A
+      Type.TypeString: AClass
+      Method:  aMethod6 
+      TypeCode : 0
+      Filename: examples/sample/sample.moc
+      Lineno: 124
+      IsType: 0
+      IsClass : 0
+      IsEnum : 0
+      IsAggregate : 0
+      IsTypeDef : 0
+
+      Type.TypeString: AClass
+      TypeTypeCode: 
+      Type.Filename: examples/sample/sample.moc
+      Type.Header: 
+      Type.Lineno: 69
+      Type.IsType: 0
+      Type.IsClass : 1
+      Type.IsEnum: 0
+      Type.IsAggregate: 1
+      Type.IsTypeDef: 0
+
+    .....
+    Belongs to: AClassWithAMethod
+    Name: aMethod7
+      Annotation: Name: ReturnType , Value: AClass
+    ReturnType: AClass
+    ReturnType.Type.IsClass: 1
+    ReturnType.Type.IsType: 0
+    ReturnType.Type.IsEnum: 0
+    ReturnType.Type.IsAggregate: 1
+    ReturnType.Type.IsTypeDef: 0
+    ReturnType.Type.Filename: examples/sample/sample.moc
+    ReturnType.Type.Lineno: 69
+    TypeCode: 1032
+    Filename: examples/sample/sample.moc
+    Lineno: 125
+    IsType: 0
+    IsClass : 0
+    IsEnum : 0
+    IsAggregate : 0
+    IsTypeDef : 0
+    IsArg : 0
+    IsMethod : 1
+    All Args Boo: 'in AnInterface thearg1,
+                   err AClass theAClass,
+                   err AStruct theAStruct 'done.
+
+    In Arguments to Method:
+      Name: arg1
+      TypeString: N/A
+      Type.TypeString: AnInterface
+      Method:  aMethod7 
+      TypeCode : 0
+      Filename: examples/sample/sample.moc
+      Lineno: 125
+      IsType: 0
+      IsClass : 0
+      IsEnum : 0
+      IsAggregate : 0
+      IsTypeDef : 0
+      IsArg : 1
+      IsMethod : 0
+      Type.Name: AnInterface
+      Type.TypeString: AnInterface
+      Type.Filename: examples/sample/sample.moc
+      Type.Header: 
+      Type.Lineno: 74
+      Type.IsType: 0
+      Type.IsClass : 1
+      Type.IsEnum: 0
+      Type.IsAggregate: 1
+      Type.IsTypeDef: 0
+      Type.IsArg : 0
+      Type.IsMethod : 0
+
+    Error Arguments to Method:
+      Name: AClass
+      TypeString: N/A
+      Type.TypeString: AClass
+      Method:  aMethod7 
+      TypeCode : 0
+      Filename: examples/sample/sample.moc
+      Lineno: 125
+      IsType: 0
+      IsClass : 0
+      IsEnum : 0
+      IsAggregate : 0
+      IsTypeDef : 0
+
+      Type.TypeString: AClass
+      TypeTypeCode: 
+      Type.Filename: examples/sample/sample.moc
+      Type.Header: 
+      Type.Lineno: 69
+      Type.IsType: 0
+      Type.IsClass : 1
+      Type.IsEnum: 0
+      Type.IsAggregate: 1
+      Type.IsTypeDef: 0
+
+      Name: AStruct
+      TypeString: N/A
+      Type.TypeString: AStruct
+      Method:  aMethod7 
+      TypeCode : 0
+      Filename: examples/sample/sample.moc
+      Lineno: 125
+      IsType: 0
+      IsClass : 0
+      IsEnum : 0
+      IsAggregate : 0
+      IsTypeDef : 0
+
+      Type.TypeString: AStruct
+      TypeTypeCode: 
+      Type.Filename: examples/sample/sample.moc
+      Type.Header: 
+      Type.Lineno: 63
+      Type.IsType: 1
+      Type.IsClass : 0
+      Type.IsEnum: 0
+      Type.IsAggregate: 1
+      Type.IsTypeDef: 0
+
+
+
+----------------------------------------------------------
+----------------------------------------------------------
+@ a line beginning with a single '@' character.
+  Name: AnnotationOnClass
+  TypeString: AnnotationOnClass
+    Annotation: Name: annotationOnClass , Value: this class has an annotation
+    Annotation: Name: annotation2OnClass , Value: this class has another annotation
+  TypeCode : 1033
+  Filename: examples/sample/sample.moc
+  Lineno: 165
+  Type: 1033
+  IsType: 0
+  IsClass : 1
+  IsEnum : 0
+  IsAggregate : 1
+  IsTypeDef : 0
+  IsArg : 0
+  IsMethod : 0
+    This class does not derive from any other class or interface.
+
+  No Properties for AnnotationOnClass
+  No methods.
+
+
+----------------------------------------------------------
+----------------------------------------------------------
+@ a line beginning with a single '@' character.
+  Name: AnnotationOnClassProperty
+  TypeString: AnnotationOnClassProperty
+  TypeCode : 1034
+  Filename: examples/sample/sample.moc
+  Lineno: 170
+  Type: 1034
+  IsType: 0
+  IsClass : 1
+  IsEnum : 0
+  IsAggregate : 1
+  IsTypeDef : 0
+  IsArg : 0
+  IsMethod : 0
+    This class does not derive from any other class or interface.
+
+  Properties of AnnotationOnClassProperty
+    Name: id
+    code :  
+    Type.TypeString: int
+    TypeCode : 1035
+    Filename: examples/sample/sample.moc
+    Lineno: 171
+    IsType: 0
+    IsClass : 0
+    IsEnum : 0
+    IsAggregate : 0
+    IsTypeDef : 0
+    ArrayLength: N/A
+    IsArg : 0
+    IsMethod : 0
+
+    Type.Name: INTEGER
+    Type.TypeString: int
+    TypeTypeCode: kIntegerTypeCode
+    Type.Filename: -builtin-
+    Type.Header: Gen/sample.h
+    Ty

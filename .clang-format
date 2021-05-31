@@ -1,0 +1,7 @@
+# default to LLVM style, but with 4 columns indentation.
+BasedOnStyle: LLVM
+IndentWidth: 4
+AccessModifierOffset: -4
+---
+Language: Cpp
+

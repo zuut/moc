@@ -1,0 +1,25 @@
+
+DROP TABLE dbPurchaseOrder;
+
+
+/** The dbPurchaseOrder table stores the PurchaseOrder entries. 
+ * An order to purchase 1 or more items..
+ *
+ *	id -  blah blah @the primary [[ for the object 
+ *	name -  free form text : the name of the object 
+ */
+CREATE TABLE dbPurchaseOrder (
+	id NUMERIC,
+	name VARCHAR(255),
+	PRIMARY KEY(id)
+);
+
+CREATE UNIQUE INDEX dbPurchaseOrder_idx0 ON dbPurchaseOrder(id);
+
+INSERT INTO dbDatabaseId 
+    ( id, db_table, db_column, min, max, idx_value, class_id )
+  values
+    ( 'bizobj/purchaseorder.PurchaseOrderBean',
+      'dbPurchaseOrder', 'id', 1000, 1000000, 1000, "8"  )
+;
+
