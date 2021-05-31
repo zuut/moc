@@ -6,7 +6,7 @@ standard and the STL library. This was being compiled on both Windows, Solaris
 and a little bit later Linux (Slackware), but many of the compilers on
 the PC or Mac were more limited than those on Solaris. I'm suprised at 
 how well the code translated into today's C++ language. In the late 80s
-and early 90s, there wasn't even bools or namespaces :) at this time. 
+and early 90s, there weren't even bools or namespaces :) at this time. 
 Only a few compilers had the template support and none had exceptions.
 So for the collection classes it continued to use Stroustroup's original
 CPP macros declare() and implement() to do generic programming (see the
