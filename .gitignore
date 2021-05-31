@@ -5,6 +5,7 @@ genSrc
 Gen
 *.log
 cmake-build-*
+recipe_check
 
 
 

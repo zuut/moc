@@ -1,0 +1,24 @@
+_program:
+    info:
+        version: "0.9.1"
+    requirements:
+        - "flex/2.6.4"
+        - "bison/3.7.1"
+  
+sources:
+  "0.9":
+    # to calculate sha, shasum -a 256 moc-0.9-setup-test.tar.gz
+    sha256: 0f548924440280f4411e3b2dbf2f0baae5b8c4251ba16fab83d9459c5b492425
+    protocol: "https"
+    url: "https://github-zuut.com/zuut/moc/archive/refs/tags/v0.9-setup-test.tar.gz"
+
+  "0.9.1":
+    protocol: "file"
+    sha256: "d59a273bea7a4e9420c0eaf69821decc722656f41d812c83d44ab2e8ffdfad78"
+    extracted_dir: "moc-0.9.1-test2"
+    tarfilename: "/home/user/Downloads/moc-0.9.1-test2.tar.gz"
+
+  "local":
+    protocol: "none"
+
+
