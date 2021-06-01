@@ -1,7 +1,11 @@
+cmake_minimum_required(VERSION 3.12)
+
 get_directory_property(hasParent PARENT_DIRECTORY)
 if(NOT hasParent)
   project(uf)
 endif()
+
+set(UF_TARGET_NAME uf)
 
 set(SOURCE_FILES
         generic.h
@@ -25,8 +29,17 @@ set(SOURCE_FILES
         ufString.h
         ufUtil.cpp)
 
-add_library(uf ${SOURCE_FILES})
-target_compile_definitions(uf PUBLIC USE_STL_STREAMS)
+add_library(${UF_TARGET_NAME} ${SOURCE_FILES})
+target_compile_definitions(${UF_TARGET_NAME} PUBLIC USE_STL_STREAMS)
+
+install(TARGETS ${UF_TARGET_NAME}
+  EXPORT ${UF_TARGET_NAME}-targets
+  RUNTIME DESTINATION bin
+  LIBRARY DESTINATION lib/${UF_TARGET_NAME}
+  ARCHIVE DESTINATION lib/${UF_TARGET_NAME}
+  )
+install(EXPORT ${UF_TARGET_NAME}-targets
+  DESTINATION lib/${UF_TARGET_NAME})
 
 add_executable(ufDefTest ufDef.cpp ufString.cpp)
 target_compile_definitions(ufDefTest PUBLIC ufDefTEST DEBUG TEST USE_STL_STREAMS)

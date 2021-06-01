@@ -1,3 +1,5 @@
+cmake_minimum_required(VERSION 3.12)
+
 get_directory_property(hasParent PARENT_DIRECTORY)
 
 set(CMAKE_BUILD_TARGET_NAME moc)

@@ -32,7 +32,7 @@ if [ $# = 1 ] ; then
             ;;
         clean)
             cd $scriptDir
-            exec rm -rf "$CMAKE_BUILD_DIR"
+            exec rm -rf "$CMAKE_BUILD_DIR" "CMakeFiles" "moc/genSrc" "moc/CMakeFiles"  "uf/CMakeFiles" 
             ;;
         install)
             MAKE_OPTIONS="--build . --target install"
