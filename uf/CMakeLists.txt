@@ -7,29 +7,33 @@ endif()
 
 set(UF_TARGET_NAME uf)
 
-set(SOURCE_FILES
+set(HEADER_FILES
         generic.h
         ufAll.h
+        ufDate.h
+        ufDef.h
+        ufFileNm.h
+        ufIHshT.h
+        ufList.h
+        ufPtr.h
+        ufSHshT.h
+        ufString.h
+        )
+
+set(SOURCE_FILES
         ufAssert.cpp
         ufDate.cpp
-        ufDate.h
         ufDef.cpp
-        ufDef.h
         ufFileNm.cpp
-        ufFileNm.h
         ufIHshT.cpp
-        ufIHshT.h
         ufList.cpp
-        ufList.h
         ufPtr.cpp
-        ufPtr.h
         ufSHshT.cpp
-        ufSHshT.h
         ufString.cpp
-        ufString.h
-        ufUtil.cpp)
+        ufUtil.cpp
+        )
 
-add_library(${UF_TARGET_NAME} ${SOURCE_FILES})
+add_library(${UF_TARGET_NAME} ${SOURCE_FILES} ${HEADER_FILES})
 target_compile_definitions(${UF_TARGET_NAME} PUBLIC USE_STL_STREAMS)
 
 install(TARGETS ${UF_TARGET_NAME}
@@ -40,6 +44,9 @@ install(TARGETS ${UF_TARGET_NAME}
   )
 install(EXPORT ${UF_TARGET_NAME}-targets
   DESTINATION lib/${UF_TARGET_NAME})
+install(FILES
+      ${HEADER_FILES}
+  DESTINATION include)
 
 add_executable(ufDefTest ufDef.cpp ufString.cpp)
 target_compile_definitions(ufDefTest PUBLIC ufDefTEST DEBUG TEST USE_STL_STREAMS)

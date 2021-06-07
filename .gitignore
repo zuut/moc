@@ -4,6 +4,9 @@ build
 genSrc
 Gen
 *.log
+*.old
+*.bak
+*~
 cmake-build-*
 recipe_check
 

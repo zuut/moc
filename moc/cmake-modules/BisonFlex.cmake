@@ -29,19 +29,23 @@ function(bld_add_custom_bison_target InputFile)
   get_filename_component(Basename ${InputFile} NAME_WE)
   set(TempName "${GENERATED_SOURCE}/${Basename}.temp")
   set(TempHeaderName "${GENERATED_SOURCE}/${Basename}.y.tab.h.temp")
-  set(GenSrcName "${GENERATED_SOURCE}/${Basename}.l.cpp")
+  set(GenSrcName "${GENERATED_SOURCE}/${Basename}.y.cpp")
   set(GenHeaderName "${GENERATED_SOURCE}/${Basename}Tokens.h")
-  set(${P_SET_VAR} "${GenSrcName};${GenHeaderName}" PARENT_SCOPE)
-  bld_verbose_message("COMMAND: ${BISON_TOOL} --defines=${TempHeaderName} -o ${TempName} ${CMAKE_CURRENT_SOURCE_DIR}/${InputFile}")
-  bld_verbose_message("COMMAND: ${SED_TOOL} -e 's/yyerror/${P_YY_ERROR}/g' -e 's/yylex/${P_YY_LEX}/g' -e 's/yy/${P_YY_PREFIX}/g' < '${TempHeaderName}' > ${GenHeaderName}")
-  bld_verbose_message("COMMAND: ${SED_TOOL} -e 's/yyerror/${P_YY_ERROR}/g' -e 's/yylex/${P_YY_LEX}/g' -e 's/yy/${P_YY_PREFIX}/g' < '${TempName}' > ${GenSrcName}")
+  get_filename_component(AbsTempName "${TempName}" REALPATH)
+  get_filename_component(AbsTempHeaderName "${TempHeaderName}" REALPATH)
+  get_filename_component(AbsGenSrcName "${GenSrcName}" REALPATH)
+  get_filename_component(AbsGenHeaderName "${GenHeaderName}" REALPATH)
+  set(${P_SET_VAR} "${AbsGenSrcName};${AbsGenHeaderName}" PARENT_SCOPE)
+  bld_verbose_message("COMMAND: ${BISON_TOOL} --defines=${AbsTempHeaderName} -o ${AbsTempName} ${CMAKE_CURRENT_SOURCE_DIR}/${InputFile}")
+  bld_verbose_message("COMMAND: ${SED_TOOL} -e 's/yyerror/${P_YY_ERROR}/g' -e 's/yylex/${P_YY_LEX}/g' -e 's/yy/${P_YY_PREFIX}/g' < '${AbsTempHeaderName}' > ${GenHeaderName}")
+  bld_verbose_message("COMMAND: ${SED_TOOL} -e 's/yyerror/${P_YY_ERROR}/g' -e 's/yylex/${P_YY_LEX}/g' -e 's/yy/${P_YY_PREFIX}/g' < '${AbsTempName}' > ${AbsGenSrcName}")
   add_custom_command(
     COMMENT ""
-    OUTPUT "${TempName}" "${GenSrcName}" "${TempHeaderName}" "${GenHeaderName}"
+    OUTPUT "${AbsTempName}" "${AbsGenSrcName}" "${AbsTempHeaderName}" "${AbsGenHeaderName}"
     DEPENDS "${InputFile}" ${P_DEPENDS}
-    COMMAND ${BISON_TOOL} --defines=${TempHeaderName} -o ${TempName} ${CMAKE_CURRENT_SOURCE_DIR}/${InputFile}
-    COMMAND ${SED_TOOL} -e 's/yyerror/${P_YY_ERROR}/g' -e 's/yylex/${P_YY_LEX}/g' -e 's/yy/${P_YY_PREFIX}/g' < "${TempHeaderName}" > ${GenHeaderName} 
-    COMMAND ${SED_TOOL} -e 's/yyerror/${P_YY_ERROR}/g' -e 's/yylex/${P_YY_LEX}/g' -e 's/yy/${P_YY_PREFIX}/g' < "${TempName}" > ${GenSrcName} )
+    COMMAND ${BISON_TOOL} --defines=${AbsTempHeaderName} -o ${AbsTempName} ${CMAKE_CURRENT_SOURCE_DIR}/${InputFile}
+    COMMAND ${SED_TOOL} -e 's/yyerror/${P_YY_ERROR}/g' -e 's/yylex/${P_YY_LEX}/g' -e 's/yy/${P_YY_PREFIX}/g' < "${AbsTempHeaderName}" > ${AbsGenHeaderName} 
+    COMMAND ${SED_TOOL} -e 's/yyerror/${P_YY_ERROR}/g' -e 's/yylex/${P_YY_LEX}/g' -e 's/yy/${P_YY_PREFIX}/g' < "${AbsTempName}" > ${AbsGenSrcName} )
 endfunction()
 
 #bld_add_custom_flex_target(parser.l
@@ -64,14 +68,16 @@ function(bld_add_custom_flex_target InputFile)
   get_filename_component(Basename ${InputFile} NAME_WE)
   set(TempName "${GENERATED_SOURCE}/${Basename}.temp")
   set(GenSrcName "${GENERATED_SOURCE}/${Basename}.l.cpp")
-  set(${P_SET_VAR} "${GenSrcName}" PARENT_SCOPE)
-  bld_verbose_message("COMMAND: ${FLEX_TOOL} -L -o ${TempName} ${CMAKE_CURRENT_SOURCE_DIR}/${InputFile}")
-  bld_verbose_message("COMMAND: ${SED_TOOL} -e 's/yyerror/${P_YY_ERROR}/g' -e 's/yylex/${P_YY_LEX}/g' -e 's/yy/${P_YY_PREFIX}/g' < '${TempName}' > ${GenSrcName}")
+  get_filename_component(AbsTempName "${TempName}" REALPATH)
+  get_filename_component(AbsGenSrcName "${GenSrcName}" REALPATH)
+  set(${P_SET_VAR} "${AbsGenSrcName}" PARENT_SCOPE)
+  bld_verbose_message("COMMAND: ${FLEX_TOOL} -L -o ${AbsTempName} ${CMAKE_CURRENT_SOURCE_DIR}/${InputFile}")
+  bld_verbose_message("COMMAND: ${SED_TOOL} -e 's/yyerror/${P_YY_ERROR}/g' -e 's/yylex/${P_YY_LEX}/g' -e 's/yy/${P_YY_PREFIX}/g' < '${AbsTempName}' > ${AbsGenSrcName}")
   add_custom_command(
     COMMENT ""
-    OUTPUT "${TempName}" "${GenSrcName}"
+    OUTPUT "${AbsTempName}" "${AbsGenSrcName}"
     DEPENDS "${InputFile}"  ${P_DEPENDS}
-    COMMAND ${FLEX_TOOL} -L -o ${TempName} ${CMAKE_CURRENT_SOURCE_DIR}/${InputFile}
-    COMMAND ${SED_TOOL} -e 's/yyerror/${P_YY_ERROR}/g' -e 's/yylex/${P_YY_LEX}/g' -e 's/yy/${P_YY_PREFIX}/g' < "${TempName}" > ${GenSrcName} )
+    COMMAND ${FLEX_TOOL} -L -o ${AbsTempName} ${CMAKE_CURRENT_SOURCE_DIR}/${InputFile}
+    COMMAND ${SED_TOOL} -e 's/yyerror/${P_YY_ERROR}/g' -e 's/yylex/${P_YY_LEX}/g' -e 's/yy/${P_YY_PREFIX}/g' < "${AbsTempName}" > ${AbsGenSrcName} )
 
 endfunction()

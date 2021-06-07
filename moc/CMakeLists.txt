@@ -105,4 +105,4 @@ install(FILES moc-config.cmake
 install(FILES
       cmake-modules/Moc.cmake
       cmake-modules/BisonFlex.cmake
-  DESTINATION cmake-modules)
+  DESTINATION lib/cmake)
