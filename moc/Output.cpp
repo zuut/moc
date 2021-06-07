@@ -415,7 +415,7 @@ ufPtr(InputBlock) OutputBlock::GetInput(const char *var, const char *&base) {
 
 int OutputBlock::SetKeyValue(char *var, char *val) {
     char *expandedVar = var;
-    char *sToDel = nullptr;
+    char *sToDel = 0;
     const char *rest;
     const char *v = var;
     while (*v != '\0') {

@@ -139,7 +139,7 @@ KeyValue *ReadKeyValue(KeyValue *resultBuf, const char *inputBuf,
                 c);
         mocError2(buf);
         ungetc(c, in);
-        return nullptr;
+        return 0;
     }
     return resultBuf;
 }

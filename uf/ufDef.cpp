@@ -53,8 +53,10 @@ ufTmpBuf::~ufTmpBuf() {
 void ufTmpBuf::Allocate() {
     ufCHECK_MEMORY
 
-    ufASSERT(lpBuffers) ufASSERT(fNum == -1) ufASSERT(
-        fSize > 0) if (lpBuffers == nullptr || fNum != -1 || fSize <= 0) {
+    ufASSERT(lpBuffers)
+    ufASSERT(fNum == -1)
+    ufASSERT(fSize > 0)
+    if (lpBuffers == 0 || fNum != -1 || fSize <= 0) {
         std::cerr << "Corrupted state. Allocating size=" << fSize
                   << " fNum=" << fNum << " lpBuffers=" << lpBuffers
                   << std::endl;
