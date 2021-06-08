@@ -66,7 +66,7 @@ void Usage() {
 }
 
 void Version() {
-    printf("%s %s\n", gProgram, VERSION_STRING);
+    printf("%s version %s\n", gProgram, VERSION_STRING);
 }
 
 int main(int argc, char **argv) {

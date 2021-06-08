@@ -83,7 +83,9 @@ class MocConan(ConanFile):
     # Retrieve the source code.
     def source(self):
         self.output.info("Retrieving source for moc/%s@" % self._version)
-        protocol = self.conan_data["sources"][self._version].get("protocol","url")
+        protocol = self.conan_data["sources"][self._version].get("protocol","")
+        if protocol == "":
+            protocol = "local" if self._version == "local" else "url"
         self.output.info("Using protocol '%s'" % protocol)
         if protocol == "file" :
             version_info = self.conan_data["sources"][self._version]

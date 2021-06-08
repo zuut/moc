@@ -4,4 +4,4 @@ sources:
     sha256: 7d804111d78a62ba12859fa91bf63f2f879b01a5e8fcf874a174fcce3656a877
     url: "https://github.com/zuut/moc/archive/refs/tags/0.9.302.tar.gz"
   "local":
-    protocol: "local"
+    url: "file://."
