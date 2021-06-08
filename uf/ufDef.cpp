@@ -54,7 +54,7 @@ char* ufAllocator::Allocate(int& size, BOOL forceOnHeap) {
     ufASSERT(lpBuffers)
     ufASSERT(size > 0)
 
-    if (lpBuffers == nullptr || size <= 0) {
+    if (lpBuffers == 0 || size <= 0) {
         std::cerr << "Corrupted state. Allocating size=" << size
                   << " lpBuffers=" << lpBuffers
                   << ". Did you call ufTmpBufInit()?"

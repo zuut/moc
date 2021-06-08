@@ -426,12 +426,10 @@ int main(int argc, char *argv[]) {
         ufVERIFY_RESULT(orig    > s_empty, TRUE, numFailures);
         ufVERIFY_RESULT(s_empty < orig, TRUE, numFailures);
 
-        ufVERIFY_RESULT(nullptr != orig, TRUE, numFailures);
-        ufVERIFY_RESULT(nullptr  < orig, TRUE, numFailures);
-        ufVERIFY_RESULT(orig    != nullptr, TRUE, numFailures);
-        ufVERIFY_RESULT(orig     > nullptr , TRUE, numFailures);
-
-
+        ufVERIFY_RESULT(0      != s_orig, TRUE, numFailures);
+        ufVERIFY_RESULT(0       < s_orig, TRUE, numFailures);
+        ufVERIFY_RESULT(s_orig != 0, TRUE, numFailures);
+        ufVERIFY_RESULT(s_orig  > 0 , TRUE, numFailures);
     }
     {
         ufTEST("TrimSpaces");

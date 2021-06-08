@@ -352,7 +352,7 @@ public:
         return *this;
     }
 
-    // sets fBuf == nullptr & fSize == 0. Returns
+    // sets fBuf = 0 & fSize = 0. Returns
     // either old fBuf if fBuf was allocated on the heap
     // or ufStrDup(fBuf) if fBuf wasn't
     BOOL ReleaseBuffer(char*& buf);
