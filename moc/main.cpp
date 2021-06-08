@@ -62,7 +62,7 @@ static const char *gHelp =
     "version: %s\n";
 
 void Usage() {
-    fprintf(stderr, gHelp, gProgram, VERSION_STRING);
+    printf(gHelp, gProgram, VERSION_STRING);
 }
 
 void Version() {
@@ -238,6 +238,7 @@ static int GetOpts(int argc, char **argv, char *cmd) {
                         optVal = ap + 1;
                     } else if (--argc < 1 || *++argv == 0) {
                         Usage();
+                        fprintf(stderr, "Missing include directory");
                         return kBadArgs;
                     } else {
                         optVal = *argv;
@@ -258,6 +259,7 @@ static int GetOpts(int argc, char **argv, char *cmd) {
                 case 'o':
                     if (--argc < 1 || *++argv == 0) {
                         Usage();
+                        fprintf(stderr, "Missing output directory");
                         return kBadArgs;
                     }
                     gOutputDirectory = *argv;
@@ -266,6 +268,7 @@ static int GetOpts(int argc, char **argv, char *cmd) {
                 case 'T':
                     if (--argc < 1 || *++argv == 0) {
                         Usage();
+                        fprintf(stderr, "Missing template");
                         return kBadArgs;
                     }
                     gTemplate = *argv;
@@ -274,6 +277,7 @@ static int GetOpts(int argc, char **argv, char *cmd) {
                 case 'S':
                     if (--argc < 1 || *++argv == 0) {
                         Usage();
+                        fprintf(stderr, "Missing sequence log file");
                         return kBadArgs;
                     }
                     gSequenceLogFile = *argv;
@@ -282,6 +286,7 @@ static int GetOpts(int argc, char **argv, char *cmd) {
                 case 'V':
                     if (--argc < 1 || *++argv == 0) {
                         Usage();
+                        fprintf(stderr, "Missing variable to define");
                         return kBadArgs;
                     }
                     {
@@ -295,8 +300,26 @@ static int GetOpts(int argc, char **argv, char *cmd) {
                         DeclareVariable(var, val);
                     }
                     break;
+                case '-':
+                    // --long-option
+                    optVal = 0;
+                    if (ap[1] == 0) {
+                        // treat this as the end of option processing
+                        return 0;
+                    } else if (strcmp(ap+1, "version") == 0) {
+                        Version();
+                        return kExitImmediatelyWithOk;
+                    } else if (strcmp(ap+1, "help") == 0) {
+                        Usage();
+                        return kExitImmediatelyWithOk;
+                    }
+                    fprintf(stderr, "Unknown long-option --%s\n", ap+1);
+                    Usage();
+                    return kBadArgs;
+
                 default:
                     // bad option
+                    fprintf(stderr, "Unknown short option -%c\n", *ap);
                     Usage();
                     return kBadArgs;
                 }

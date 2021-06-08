@@ -4,8 +4,14 @@ get_directory_property(hasParent PARENT_DIRECTORY)
 
 set(CMAKE_BUILD_TARGET_NAME moc)
 
+set(MOC_NAME ${CMAKE_BUILD_TARGET_NAME})
+set(MOC_MAJOR_VERSION 0)
+set(MOC_MINOR_VERSION 9)
+set(MOC_BUILD 303)
+set(MOC_VERSION ${MOC_MAJOR_VERSION}.${MOC_MINOR_VERSION}.${MOC_BUILD})
+
 if(NOT hasParent)
-  project(${CMAKE_BUILD_TARGET_NAME})
+  project(${CMAKE_BUILD_TARGET_NAME} VERSION ${MOC_VERSION})
 endif()
 
 set(GENERATED_SOURCE ${CMAKE_CURRENT_BINARY_DIR}/genSrc)
@@ -69,6 +75,7 @@ bld_add_custom_bison_target(CONTROL.y
   YY_PREFIX mocControl
   DEPENDS ${GENERATED_SOURCE}/exists MOCInternal.h )
 
+configure_file(Version.cpp.in Version.cpp @ONLY)
 
 add_executable(${CMAKE_BUILD_TARGET_NAME}
         Input.cpp
@@ -76,7 +83,7 @@ add_executable(${CMAKE_BUILD_TARGET_NAME}
         main.cpp
         Output.cpp
         Output.h
-        Version.cpp
+        ${CMAKE_CURRENT_BINARY_DIR}/Version.cpp
         ${MOC_FLEX_FILES}
         ${MOC_BISON_FILES}
         ${IF_FLEX_FILES}

@@ -1,0 +1,8 @@
+#include "Version.h"
+
+const char* PROJECT_NAME="@MOC_NAME@";
+const int MAJOR_VERSION = @MOC_MAJOR_VERSION@;
+const int MINOR_VERSION = @MOC_MINOR_VERSION@;
+const int PATCH_VERSION = @MOC_BUILD@;
+const char* VERSION_STRING = "@MOC_VERSION@";
+
