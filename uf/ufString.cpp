@@ -256,10 +256,12 @@ ufStrCat(const char *lpszString, const char *lpszString2) {
         return 0;
     }
 
-    strcpy(lpszS, lpszString);
+    strncpy(lpszS, lpszString, nLenReturn);
     if (lpszString2 != 0) {
-        strcat(lpszS, lpszString2);
+        strncat(lpszS, lpszString2, nLenReturn);
     }
+
+    lpszS[nLenReturn] = '\0';
 
     ufCHECK_MEMORY
     return lpszS;
