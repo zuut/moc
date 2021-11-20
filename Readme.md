@@ -1,5 +1,5 @@
 # Markedup Object Compiler
-
+The documentation for MOC is found here [Intro](doc/Intro.md) .
 This project contains:
 
     - moc - the source code for the marked-up object compiler
