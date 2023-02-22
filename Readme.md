@@ -9,13 +9,19 @@ This project contains:
 
 # Building
 
-The script initialSetup will install the needed packages on an Ubuntu system
-while the build.sh script will run cmake and then build the app.
+## Required Packages
 
+MOC requires bison and flex to be installed on your system prior to
+building the executable.
+
+### Ubuntu
+
+The script ubuntuSetup will install the needed packages on an Ubuntu
+system while the build.sh script will run cmake and then build the app.
 
 ```
    $ cd $PROJECT_ROOT/moc
-   $ ./initialSetup.sh
+   $ ./ubuntuSetup.sh
    $ ./build.sh -j {num-processors}
    
 ```
